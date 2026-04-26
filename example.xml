@@ -1,0 +1,28 @@
+<store>
+    <book>
+        <title> Crime and Punishment </title>
+        <author>
+            <name> Fyodor </name>
+            <lastname> Dostoevsky </lastname>
+        </author>
+        <price> 10 </price>
+    </book>
+
+    <book>
+        <title> The life of a stupid man </title>
+        <author>
+            <name> Ryunosuke </name>
+            <lastname> Akutagawa </lastname>
+        </author>
+        <price> 5 </price>
+    </book>
+
+    <book>
+        <title> I have no mouth and i must scream</title>
+        <author>
+            <name> Harlan </name>
+            <lastname> Ellison </lastname>
+        </author>
+        <price> 5 </price>
+    </book>
+</store>
