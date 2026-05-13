@@ -3,6 +3,7 @@
 #include<vector>
 #include<fstream>
 #include"Node.hpp"
+#include<stack>
 
 class XML
 {
