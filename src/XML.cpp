@@ -50,7 +50,6 @@ void XML::Load(std::string path, int posPtr)
             lookingForPair.push(p);
 
             std::cout << "Opening tag: " << tag << "\n";
-            //std::cout << "Pushed tag: " << lookingForPair.top().tag << "\n";   
         }
 
         else if(fileContents[i] == '<' && fileContents[i + 1] == '/') // Get the closing Tag
@@ -63,16 +62,30 @@ void XML::Load(std::string path, int posPtr)
                 i++;
             }
 
-            if(lookingForPair.top().tag == closingTag)
+            if(lookingForPair.top().tag == closingTag) // get the node content
             {
-                for(int c = lookingForPair.top().index; c < contentEndIndex; c++)
+                for(int c = lookingForPair.top().index; c < contentEndIndex; c++) 
                 {
                     content += fileContents[c];
                 }
 
-                lookingForPair.pop();
+                if(content.find("<") == std::string::npos)
+                {
+                    std::cout << "Content: " << content << "\n";
+                }
 
-                std::cout << "Content: " << content << "\n";
+                if(lookingForPair.size() > 1) // assign children nodes
+                {
+                    Node node(lookingForPair.top().tag, content);
+
+                    lookingForPair.pop();
+
+                    Node Parent(lookingForPair.top().tag);
+                    Parent.AddChild(&node);
+
+                    nodes.push_back(Parent);
+                    nodes.push_back(node);
+                }
             }
 
             std::cout << "Closing tag: " << closingTag<< "\n";   
