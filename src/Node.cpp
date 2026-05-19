@@ -28,8 +28,12 @@ std::string Node::GetTagName()
     return tag;
 }
 
-std::string Node::AddChild(Node* node)
+void Node::AddChild(Node *node)
 {
     children.push_back(node);
-    return "abc";
+}
+
+std::vector<Node*> Node::GetChildren()
+{
+    return children;
 }

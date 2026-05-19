@@ -15,8 +15,9 @@ class Node
         Node(std::string tag, std::string content);
         Node(std::string tag, std::vector<Node*> children);
 
-        std::string AddChild(Node* node);
+        void AddChild(Node *node);
 
         std::string GetText();
         std::string GetTagName();
+        std::vector<Node*> GetChildren();
 };

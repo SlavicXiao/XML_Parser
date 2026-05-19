@@ -25,4 +25,14 @@
         </author>
         <price> 5 </price>
     </book>
+
+    <book>
+        <title> The King in Yellow</title>
+        <author>
+            <name> Charles </name>
+            <lastname> Chambers </lastname>
+        </author>
+        <price> 5 </price>
+    </book>
+
 </store>
